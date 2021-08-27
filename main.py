@@ -1,4 +1,3 @@
-import smtplib
 from methods import *
 
 if __name__ == "__main__":
@@ -6,7 +5,7 @@ if __name__ == "__main__":
 
 def main():
     data = readCSV('info.csv') # read in csv file with email data
-    nms, emls, pws, subjs, bods, recips = subdivideData(data) # subdivide data into categories
+    nms, emls, pws, subjs, bods, recips = subdivideData(data) # subdivide data into categories # name, email, password, subject, body, recipient
 
     for x in range(len(emls)):
         time.sleep(5)
@@ -14,7 +13,7 @@ def main():
         gmail_password = pws[x] # get password
 
         subject = subjs[x] + '  ' + get_String_Time() # get subject
-        body = bodyMaker(2, nms, x)
+        body = bodyMaker(2, nms, x) # get body from presaved options
         print(body)
         recipients = recips[x] # get recipients
 
