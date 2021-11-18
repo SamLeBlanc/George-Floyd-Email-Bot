@@ -13,8 +13,7 @@ def main():
         gmail_password = pws[x] # get password
 
         subject = subjs[x] + '  ' + get_String_Time() # get subject
-        body = bodyMaker(2, nms, x) # get body from presaved options
-        print(body)
+        body = bods[x] # get body
         recipients = recips[x] # get recipients
 
         server = create_Server(gmail_user, gmail_password) # create server for email login
